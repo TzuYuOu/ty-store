@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+div.scrollmenu {
+  background-color: white;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: #428df5;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+input {
+  width: 100%
+}
+
+.login-btn {
+  width: 100%
+}
+
+.full-width{
+  width: 100%;
+}
