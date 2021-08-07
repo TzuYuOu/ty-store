@@ -43,7 +43,8 @@ const login = async (req, res, next) => {
     }
 
     const token = user.getSignedJwtToken();
-    res.status(200).json({success: true, token});
+    const userId = user.id
+    res.status(200).json({success: true, token, userId});
 
   }
   catch(err){

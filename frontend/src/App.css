@@ -31,3 +31,7 @@ input {
 .full-width{
   width: 100%;
 }
+
+a:link {
+  text-decoration: none;
+}

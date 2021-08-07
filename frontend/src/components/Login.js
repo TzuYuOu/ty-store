@@ -17,15 +17,16 @@ const Login = (props) => {
 
     AuthService.login(userData)
       .then(res => {
-        alert('Login successfully')
+        alert('Login successfully');
         // console.log(res.data)
-        localStorage.setItem('token', JSON.stringify(res.data.token))
-        props.history.push('/')
-        window.location.reload()
+        localStorage.setItem('token', JSON.stringify(res.data.token));
+        localStorage.setItem('userId', JSON.stringify(res.data.userId));
+        props.history.push('/');
+        window.location.reload();
       })
       .catch(err => {
-        alert('Login fail')
-        console.log(err)
+        alert('Login fail');
+        console.log(err);
       })
 
   }

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Modal, Dropdown } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Nav from './Nav';
 
-const Shop = ({cartItems, setCartItems, total, isAuthenticated}) => {
+const Shop = ({cartItems, setCartItems, total}) => {
 
   const [items, setItems] = useState({
     hamburger : [
@@ -124,27 +125,11 @@ const Shop = ({cartItems, setCartItems, total, isAuthenticated}) => {
     setShow(false);
   }
 
-  const logout = () => {
-    localStorage.removeItem("token")
-  }
-
   return (
     <div>
-      <div className="container  bg-white">
+      <div className="container bg-white">
         <div className="row my-3">
-          <Dropdown>
-            <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-              <i className="bi bi-list"></i>
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu variant="dark">
-              <Dropdown.Item href="#store_info">門市資訊</Dropdown.Item>
-              { !isAuthenticated && <Dropdown.Item href="/login">登入會員</Dropdown.Item>}
-              { isAuthenticated && <Dropdown.Item href="/history">歷史訂單</Dropdown.Item>}
-              { isAuthenticated && <Dropdown.Item href="/" onClick={logout}>登出會員</Dropdown.Item>}
-            </Dropdown.Menu>
-          </Dropdown>
-
+          <Nav/>
           <span className="text-center">拉亞后里大圳店</span>
         </div>
         <div className="row justify-content-between">

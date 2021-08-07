@@ -9,6 +9,7 @@ const Cart = ({cartItems, setCartItems, total}) => {
   const initialDatetime = new Date();
   const [pickupDate, setPickupDate] = useState(Moment(initialDatetime).format('YYYY-MM-DD'));
   const [pickupTime, setPickupTime] = useState(Moment(initialDatetime).format('HH:mm'));
+  const userId = JSON.parse(localStorage.getItem("userId"));
 
   const removeFromCart = (indexInCart) => {
 
@@ -21,12 +22,14 @@ const Cart = ({cartItems, setCartItems, total}) => {
   const sendOrder = () => {
 
     const order = {
-      userId: "61049301f7c565e62b2ea634",
+      userId: userId,
       items: cartItems,
       pickupDate: pickupDate,
       pickupTime: pickupTime,
       totalPrice: total
     }
+
+    // console.log(order)
 
     orderService.sendOrder(order)
       .then(res => {
