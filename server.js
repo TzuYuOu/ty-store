@@ -6,15 +6,15 @@ const itemRoute = require('./routes/item-route');
 const authRoute = require('./routes/auth-route');
 const orderRoute = require('./routes/order-route');
 
+// env settings
+dotenv.config();
+
 // express app
 const app = express();
 
 // middleware
 app.use(express.json());
 app.use(cors())
-
-// env settings
-dotenv.config();
 
 // routes
 app.use('/api/item', itemRoute);

@@ -19,8 +19,7 @@ const Login = (props) => {
       .then(res => {
         alert('Login successfully');
         // console.log(res.data)
-        localStorage.setItem('token', JSON.stringify(res.data.token));
-        localStorage.setItem('userId', JSON.stringify(res.data.userId));
+        localStorage.setItem('token', res.data.token);
         props.history.push('/');
         window.location.reload();
       })

@@ -43,7 +43,7 @@ userSchema.methods.matchPassword = async function (password) {
 
 userSchema.methods.getSignedJwtToken = function (){
   return jwt.sign({id: this._id}, process.env.JWT_SECRET,{
-    expiresIn: parseInt(process.env.JWT_EXPIRE)
+    expiresIn: 24*3600
   });
 }
 
