@@ -2,7 +2,7 @@ import axios from 'axios';
 
 class AuthService {
   http = axios.create({
-    baseURL: `http://localhost:5000/api/auth`,
+    baseURL: `/api/auth`,
     headers: {
       "Content-type": "application/json"
     }
