@@ -47,11 +47,11 @@ const History = () => {
                       <div className="mt-3 py-1 px-5 full-width shadow-sm" key={index}>
                         <div className="d-flex justify-content-between">
                           <span>訂單編號</span>
-                          <span>{order._id}</span>
+                          <span>{order._id.substr(order._id.length-3)}</span>
                         </div>
                         <div className="d-flex justify-content-between">
                           <span>取餐時間</span>
-                          <span>{order.pickupDate} {order.pickupTime}</span>
+                          <span>{order.pickupDate.split("T")[0]} {order.pickupTime}</span>
                         </div>
                         <hr/>
                         {
@@ -59,14 +59,18 @@ const History = () => {
                             return (
                               <div key={idx} className="row">
                                 <div className="col-6 d-flex ">
-                                  <span>{item.quantity}</span>
-                                  <label>{item.name}</label>
+                                  <span>{item.quantity} {item.name}</span>
                                 </div>
                                 <span className="col text-end">${item.quantity*item.price}</span>
                               </div>
                             )
                           })
                         }
+                        <hr/>
+                        <div className="d-flex justify-content-between">
+                          <span>總價</span>
+                          <span>${order.totalPrice}</span>
+                        </div>
                       </div>
                     )
                   })

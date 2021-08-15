@@ -130,12 +130,12 @@ const Shop = ({cartItems, setCartItems, total}) => {
       <div className="container bg-white">
         <div className="row my-3">
           <Nav/>
-          <span className="text-center">拉亞后里大圳店</span>
+          <span className="text-center">TY 早餐店</span>
         </div>
         <div className="row justify-content-between">
           <span className="col-6 text-start">
             <i className="bi bi-geo"></i>
-            台中市后里區大圳路427號
+            台南市東區大學路一號
           </span>
           <a href="#store_info" className="col-6 text-end">門市資訊</a>
         </div>
@@ -279,8 +279,9 @@ const Shop = ({cartItems, setCartItems, total}) => {
           </div>
         </div>
       </section>
+      
       { cartItems.length > 0 &&
-        <div className="container bg-white">
+        <div className="container bg-white fixed-bottom">
           <div className="row ">
             <Link to="/cart" className="btn btn-success my-3 ">
               檢視購物車 ${total}
@@ -288,6 +289,7 @@ const Shop = ({cartItems, setCartItems, total}) => {
           </div>
         </div>
       }
+      
       <Modal show={show} onHide={()=>setShow(false)}>
         <Modal.Header closeButton> 
         </Modal.Header>
